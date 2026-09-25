@@ -1,0 +1,334 @@
+/* =========================================
+   VK FASHIONS — GLOBAL DESIGN SYSTEM
+========================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap");
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+
+  font-family: "DM Sans", sans-serif;
+
+  background: #f8f7f4;
+  color: #111;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* =========================================
+   ROOT VARIABLES
+========================================= */
+
+:root {
+  --vk-black: #111111;
+  --vk-dark: #181818;
+  --vk-white: #ffffff;
+
+  --vk-bg: #f8f7f4;
+  --vk-light: #f1f0ec;
+  --vk-border: #deddd8;
+
+  --vk-text: #111111;
+  --vk-muted: #777777;
+
+  --vk-radius-sm: 6px;
+  --vk-radius-md: 12px;
+  --vk-radius-lg: 20px;
+  --vk-radius-full: 999px;
+
+  --vk-container: 1400px;
+
+  --vk-transition: 0.3s ease;
+}
+
+/* =========================================
+   COMMON PAGE
+========================================= */
+
+main {
+  width: 100%;
+}
+
+.page-container {
+  width: min(var(--vk-container), 92%);
+  margin: 0 auto;
+}
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+p {
+  line-height: 1.7;
+}
+
+.section-title {
+  font-size: clamp(32px, 5vw, 64px);
+  letter-spacing: -1px;
+}
+
+.section-subtitle {
+  margin-top: 12px;
+
+  color: var(--vk-muted);
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   PREMIUM BUTTONS
+========================================= */
+
+.vk-button {
+  min-height: 48px;
+
+  padding: 0 28px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--vk-black);
+  border-radius: var(--vk-radius-full);
+
+  background: var(--vk-black);
+  color: var(--vk-white);
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  transition:
+    transform var(--vk-transition),
+    background var(--vk-transition),
+    color var(--vk-transition),
+    box-shadow var(--vk-transition);
+}
+
+.vk-button:hover {
+  transform: translateY(-2px);
+
+  background: transparent;
+  color: var(--vk-black);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.vk-button-light {
+  background: var(--vk-white);
+  color: var(--vk-black);
+  border-color: var(--vk-white);
+}
+
+.vk-button-light:hover {
+  background: transparent;
+  color: var(--vk-white);
+}
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.vk-input {
+  width: 100%;
+  min-height: 52px;
+
+  padding: 0 16px;
+
+  border: 1px solid var(--vk-border);
+  border-radius: var(--vk-radius-sm);
+
+  outline: none;
+
+  background: var(--vk-white);
+  color: var(--vk-black);
+
+  transition:
+    border-color var(--vk-transition),
+    box-shadow var(--vk-transition);
+}
+
+.vk-input:focus {
+  border-color: var(--vk-black);
+
+  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.06);
+}
+
+.vk-input::placeholder {
+  color: #999;
+}
+
+/* =========================================
+   CARDS
+========================================= */
+
+.vk-card {
+  background: var(--vk-white);
+
+  border: 1px solid var(--vk-border);
+  border-radius: var(--vk-radius-md);
+
+  transition:
+    transform var(--vk-transition),
+    box-shadow var(--vk-transition);
+}
+
+.vk-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================
+   IMAGE EFFECT
+========================================= */
+
+.vk-image {
+  overflow: hidden;
+}
+
+.vk-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.vk-image:hover img {
+  transform: scale(1.05);
+}
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.vk-divider {
+  width: 100%;
+  height: 1px;
+
+  background: var(--vk-border);
+}
+
+/* =========================================
+   SELECTION
+========================================= */
+
+::selection {
+  background: var(--vk-black);
+  color: var(--vk-white);
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--vk-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .page-container {
+    width: 92%;
+  }
+
+  .section-title {
+    font-size: 38px;
+  }
+
+  .vk-button {
+    min-height: 46px;
+    padding: 0 22px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
